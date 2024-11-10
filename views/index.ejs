@@ -1,7 +1,22 @@
 <%- include('./partials/head') %>
-<script src="server.js" defer></script>
 </head>
 <body>
     <h1>Joke House</h1>
+    
+    <h3><%= randomJoke.setup %></h3>
+    <h4><%= randomJoke.delivery %></h4>
+    
+    <p>
+        There's more where that came from...
+        <br>
+        Pick a category below for a list of jokes!
+    </p>
+    <% categoriesList.forEach((cat) => { %>
+        <button><%= cat.category %></button>
+    <% }) %>
+
+    <p>Have a new joke for us? Click this button for a form to put it in!</p>
+    <button>Add new joke</button>
+
     
 </body>
