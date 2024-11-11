@@ -2,11 +2,11 @@
 
 const express = require("express");
 const app = express();
-const fs = require("fs");
 const multer = require("multer");
 const Database = require("better-sqlite3");
 const jokesController = require("./controllers/jokes.controller");
 
+console.log("Directory: " + __dirname);
 
 app.use(multer().none());
 app.use(express.urlencoded({ extended: true }));

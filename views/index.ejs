@@ -1,6 +1,8 @@
 <%- include('./partials/head') %>
+<script src="/newJoke.js" defer></script>
 </head>
 <body>
+    <%- include('./partials/header.ejs') %>
     <h1>Joke House</h1>
     
     <h3><%= randomJoke.setup %></h3>
@@ -12,11 +14,12 @@
         Pick a category below for a list of jokes!
     </p>
     <% categoriesList.forEach((cat) => { %>
-        <button><%= cat.category %></button>
+        <button name="<%= cat.category %>" class="categories"><%= cat.category %></button>
     <% }) %>
 
     <p>Have a new joke for us? Click this button for a form to put it in!</p>
-    <button>Add new joke</button>
+    <button id="new-joke-btn">Add new joke</button>
+    <%- include('./partials/newJoke.ejs') %>
 
     
 </body>

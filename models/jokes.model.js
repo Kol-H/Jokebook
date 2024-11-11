@@ -16,7 +16,6 @@ function getRandomJoke() {
 }
 
 function getJokesByCategory(category) {
-    console.log("by category");
     let qry = "SELECT setup, delivery FROM JokeList WHERE category = ?;";
     let data = db.prepare(qry).all(category);
     return data;
