@@ -5,8 +5,10 @@
     <h1>Jokes by category: <%= category %></h1>
 
     <% jokesList.forEach((joke)=> { %>
-        <h3><%= joke.setup %></h3>
-        <h4><%= joke.delivery %></h4>
+        <section class="joke">
+            <h3><%= joke.setup %></h3>
+            <h4><%= joke.delivery %></h4>
+        </section>
         <br>
     <% }) %>
     

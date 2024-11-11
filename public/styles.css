@@ -1,6 +1,53 @@
+html {
+    width: 100%;
+    margin:0px;
+}
 body{
     font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    margin:0;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
+#searchButton{
+    padding:2px;
+    margin-left:5px;
+    height: 25px;
+    width: 25px;
+}
+header {
+    position:sticky;
+    top:0;
+    background-color: cadetblue;
+    min-height:50px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:0px;
+    width:100%;
+    margin-inline: 20px;
+}
+header a {
+    margin-inline: 20px;
+}
+
+.searchBar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section{
+    margin-bottom:15vh;
+}
+.joke {
+    border: 2px solid;
+    width:fit-content;
+    padding-inline:20px;
+    margin-block:5vh;
+}
+
 #popup {
     display:none;
 }

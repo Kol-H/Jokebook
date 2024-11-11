@@ -1,23 +1,19 @@
 "use strict";
 
-/*
-const express = require("express");
-const app = express();
-app.use(express.json());
-*/
 
 (function () {
     window.addEventListener("load", init);
     function init() {
-        //  loadGames();
-
+        
+        let searchButton = id("searchButton");
+        let searchBar = id("searchBar");
+        searchButton.addEventListener("click", function(e) {
+            goToCategory(searchBar.value);
+        });
+        
         let newButton = id("new-joke-btn");
         newButton.addEventListener("click", function () {
-            if (id("popup").style.display === "block") {
-                id("popup").style.display = "none";
-            } else {
-                id("popup").style.display = "block";
-            }
+            id("popup").style.display = "block";
         });
 
         let saveButton = id("createJoke");
@@ -33,12 +29,6 @@ app.use(express.json());
                 e.preventDefault();
                 goToCategory(cat.name);
             });
-        });
-
-        let searchButton = id("searchButton");
-        let searchBar = id("searchBar");
-        searchButton.addEventListener("click", function(e) {
-            goToCategory(searchBar.value);
         });
     }
 
@@ -65,9 +55,6 @@ app.use(express.json());
             res.status(500).send("Server Error: " + err);
         }
     }
-    function goToCategory(category) {
-        location.assign("http://localhost:3000/jokebook/joke/" + category);
-    }
     function checkStatus(response) {
         if (!response.ok) {
             throw Error("Error in request: " + response.statusText);
@@ -75,6 +62,10 @@ app.use(express.json());
         return response;
     }
 
+
+    function goToCategory(category) {
+        location.assign("http://localhost:3000/jokebook/joke/" + category);
+    }
     function id(idName) {
         return document.getElementById(idName);
     }

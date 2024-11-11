@@ -5,21 +5,27 @@
     <%- include('./partials/header.ejs') %>
     <h1>Joke House</h1>
     
-    <h3><%= randomJoke.setup %></h3>
-    <h4><%= randomJoke.delivery %></h4>
+    <section class="joke">
+        <h3><%= randomJoke.setup %></h3>
+        <h4><%= randomJoke.delivery %></h4>
+    </section>
     
-    <p>
-        There's more where that came from...
-        <br>
-        Pick a category below for a list of jokes!
-    </p>
-    <% categoriesList.forEach((cat) => { %>
-        <button name="<%= cat.category %>" class="categories"><%= cat.category %></button>
-    <% }) %>
+    <section>
+        <p>
+            There's more where that came from...
+            <br>
+            Pick a category below for a list of jokes!
+        </p>
+        <% categoriesList.forEach((cat) => { %>
+            <button name="<%= cat.category %>" class="categories"><%= cat.category %></button>
+        <% }) %>
+    </section>
 
-    <p>Have a new joke for us? Click this button for a form to put it in!</p>
-    <button id="new-joke-btn">Add new joke</button>
-    <%- include('./partials/newJoke.ejs') %>
+    <section>
+        <p>Have a new joke for us? Click this button for a form to put it in!</p>
+        <button id="new-joke-btn">Add new joke</button>
+        <%- include('./partials/newJoke.ejs') %>
+    </section>
 
     
 </body>

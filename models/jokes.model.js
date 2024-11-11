@@ -9,7 +9,6 @@ function getCategories() {
 }
 
 function getRandomJoke() {
-    console.log("getRandomJoke");
     let qry = "SELECT setup, delivery FROM JokeList ORDER BY RANDOM() LIMIT 1;";
     let data = db.prepare(qry).get();
     return data;
